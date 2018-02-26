@@ -117,9 +117,6 @@ class Blockchain(object):
         guess_hash = hashlib.sha256(guess).hexdigest()
         return guess_hash[:4] == "0000"
 
-
-
-
 #instantiate the node
 app = Flask(__name__)
 
@@ -128,7 +125,6 @@ node_identifier = str(uuid4()).replace(('-',''))
 
 #initiating the blockchain
 blockchain = Blockchain
-
 
 
 
@@ -141,7 +137,7 @@ def mine():
 
 
     #rewarding 1 coin for finding the proof
-    # the sender is 0 to signifies that this node has mined a new coin
+    # the sender is 0 to signifies that this node has mined a new coin.
 
     blockchain.new_transaction(
         sender="0",
